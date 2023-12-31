@@ -12,9 +12,23 @@
 10. Before deploying to production server, verify debug=False in app.run_server().
 ==================================
 
-## Deployment instructions (temporary)
+## Deployment instructions (temporary for existing pilot phase)
 ==================================
-1. Verify the new changes are pushed to the master branch in GitHub.
-2. TO DO.
+1. Verify the new changes are pushed to the master branch in GitHub (git push origin master).
+2. Log into the production server and do pull the changes (git pull).
+3. Go to the plasma directory (cd plasma). Activate the virtual env (source venv/bin/activate)
+4. Kill the running gunicorn process (pkill gunicorn)
+5. Restart the server (gunicorn app:server)
 
-"""
+The above instructions should be replaced with a Docker image based deployment using the .Dockerfile in the future.
+
+To build the docker image (currently for local development)
+```
+docker build -t plasma:1.0 .
+```
+To run the image locally:
+```
+docker run -p 8050:8050 --name plasma-container plasma:1.0
+```
+Visit `http://127.0.0.1:8050/` to access the application.
+==================================
