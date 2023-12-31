@@ -1,5 +1,4 @@
 ## Local development instructions
-=================================
 1. Requires a virtualenv with Python 3.11.x, or 3.12 (but not > 3.12).
 2. Install the dependencies with pip install -r requirements.txt.
 3. The data files used are located in data/.
@@ -13,7 +12,6 @@
 ==================================
 
 ## Deployment instructions (temporary for existing pilot phase)
-==================================
 1. Verify the new changes are pushed to the master branch in GitHub (git push origin master).
 2. Log into the production server and do pull the changes (git pull).
 3. Go to the plasma directory (cd plasma). Activate the virtual env (source venv/bin/activate)
@@ -22,7 +20,7 @@
 
 The above instructions should be replaced with a Docker image based deployment using the .Dockerfile in the future.
 
-To build the docker image (currently for local development)
+To build the docker image for local development.
 ```
 docker build -t plasma:1.0 .
 ```
@@ -30,5 +28,4 @@ To run the image locally:
 ```
 docker run -p 8050:8050 --name plasma-container plasma:1.0
 ```
-
 Go to `http://127.0.0.1:8050/` to access the application.
