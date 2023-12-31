@@ -30,5 +30,5 @@ To run the image locally:
 ```
 docker run -p 8050:8050 --name plasma-container plasma:1.0
 ```
-Visit `http://127.0.0.1:8050/` to access the application.
-==================================
+
+Go to `http://127.0.0.1:8050/` to access the application.
